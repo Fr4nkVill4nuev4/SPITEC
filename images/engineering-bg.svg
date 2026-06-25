@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="800" viewBox="0 0 1280 800">
+  <rect width="1280" height="800" fill="#eef0f1"/>
+  <g fill="none" stroke="#8d9399" stroke-width="3" opacity=".42" stroke-linecap="round" stroke-linejoin="round">
+    <g transform="translate(42 52)">
+      <rect x="-44" y="42" width="130" height="80" rx="8"/>
+      <circle cx="98" cy="82" r="47"/>
+      <circle cx="98" cy="82" r="25"/>
+      <path d="M-8 122h132M10 122l-22 42M70 122l22 42M-30 164h150"/>
+      <path d="M-44 54h-34M-44 110h-34"/>
+    </g>
+    <g transform="translate(348 44)">
+      <circle cx="0" cy="0" r="58"/>
+      <circle cx="0" cy="0" r="23"/>
+      <path d="M0-86v28M0 58v28M-86 0h28M58 0h28M-61-61l20 20M41 41l20 20M61-61L41-41M-41 41l-20 20"/>
+      <circle cx="91" cy="29" r="35"/>
+      <circle cx="91" cy="29" r="14"/>
+      <path d="M91-22v16M91 64v16M40 29h16M126 29h16M55-7l12 12M115 53l12 12M127-7L115 5M67 53L55 65"/>
+    </g>
+    <g transform="translate(980 28)">
+      <rect x="0" y="0" width="238" height="148"/>
+      <path d="M22 22h42v26h36v-16h52v48h44v46"/>
+      <path d="M22 120h62V92h44v-26h42"/>
+      <path d="M184 18v30h36M190 88h34M124 18v24"/>
+      <circle cx="64" cy="48" r="5"/><circle cx="100" cy="80" r="5"/><circle cx="170" cy="66" r="5"/>
+      <rect x="94" y="12" width="34" height="24"/>
+      <rect x="182" y="70" width="38" height="30"/>
+    </g>
+    <g transform="translate(1034 548)">
+      <path d="M52 0l74 30v86l-74 36-74-36V30z"/>
+      <path d="M-22 30l74 36 74-36M52 66v86"/>
+      <path d="M134-16l30 50M120-2l34 22M166 36l45 10M176 76l38 36M148 106l12 54"/>
+      <circle cx="214" cy="114" r="54"/>
+      <path d="M176 114h76M214 76v76"/>
+    </g>
+    <g transform="translate(80 715)">
+      <circle cx="0" cy="0" r="58"/>
+      <circle cx="0" cy="0" r="25"/>
+      <path d="M0-88v30M0 58v30M-88 0h30M58 0h30M-63-63l22 22M41 41l22 22M63-63L41-41M-41 41l-22 22"/>
+      <circle cx="116" cy="-2" r="38"/>
+      <circle cx="116" cy="-2" r="16"/>
+    </g>
+    <g transform="translate(425 680)">
+      <path d="M0 0l92-112 58 44-92 112z"/>
+      <path d="M16-2l92-112M38 16l92-112M60 34l92-112"/>
+      <path d="M-80 20l52-64 44 36-52 64z"/>
+    </g>
+    <g transform="translate(910 650)">
+      <path d="M0-52l58 34v68L0 84l-58-34v-68z"/>
+      <path d="M-58-18L0 16l58-34M0 16v68"/>
+      <path d="M92-18l50 30v58l-50 30-50-30V12z"/>
+      <path d="M42 12l50 30 50-30M92 42v58"/>
+    </g>
+  </g>
+</svg>

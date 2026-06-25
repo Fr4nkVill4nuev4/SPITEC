@@ -1,0 +1,3 @@
+-Libreria para mostrar estadisticas con grafico de pastel
+-Iconos
+-Axios/fetch

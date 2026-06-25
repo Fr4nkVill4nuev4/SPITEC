@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SIPTEC</title>
+  <link rel="icon" href="data:,">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main id="loginScreen" class="login-screen">
+    <section class="login-card">
+      <div class="brand-mark">
+        <span>SIP</span>
+      </div>
+      <h1>BIENVENIDO A SIPTEC</h1>
+      <p>Sistema de prestamos e inventario de area tecnica</p>
+      <p class="hint">Ingresa tus credenciales para acceder al sistema</p>
+      <form id="loginForm">
+        <label for="email">Correo electronico:</label>
+        <input id="email" class="form-control" type="email" autocomplete="email" required>
+        <label for="password">Contrasena:</label>
+        <input id="password" class="form-control" type="password" autocomplete="current-password" required>
+        <button class="btn btn-siptec w-100" type="submit">Iniciar Sesion</button>
+        <div id="loginError" class="text-warning small mt-2 d-none">Completa ambos campos para continuar.</div>
+      </form>
+      <small>Desarrollado por Equipo DTC de 2 ano de bachillerato de software 2A</small>
+    </section>
+  </main>
+
+  <main id="appShell" class="app-shell d-none">
+    <aside class="sidebar">
+      <div class="brand-mark small"><span>SIP</span></div>
+      <button class="nav-item active" data-view="dashboard" title="Panel">
+        <i class="bi bi-house-door-fill"></i><span>Panel de control</span>
+      </button>
+      <button class="nav-item" data-view="inventory" title="Inventario">
+        <i class="bi bi-box-seam-fill"></i><span>Inventario</span>
+      </button>
+      <button class="nav-item" data-view="loans" title="Prestamos">
+        <i class="bi bi-arrow-left-right"></i><span>Prestamos</span>
+      </button>
+      <button class="nav-item" data-view="returns" title="Devoluciones">
+        <i class="bi bi-arrow-counterclockwise"></i><span>Devoluciones</span>
+      </button>
+      <button class="nav-item" data-view="users" title="Usuarios">
+        <i class="bi bi-people-fill"></i><span>Usuarios</span>
+      </button>
+      <button class="nav-item" data-view="reports" title="Reportes">
+        <i class="bi bi-file-earmark-text-fill"></i><span>Reportes</span>
+      </button>
+      <button class="nav-item" data-view="history" title="Historial">
+        <i class="bi bi-clock-history"></i><span>Historial</span>
+      </button>
+      <button class="nav-item" data-view="settings" title="Configuracion">
+        <i class="bi bi-gear-fill"></i><span>Configuracion</span>
+      </button>
+    </aside>
+
+    <section class="content-area">
+      <header class="topbar">
+        <div class="search-box">
+          <i class="bi bi-search"></i>
+          <input id="globalSearch" type="search" placeholder="Busca herramienta, usuario, codigo...">
+        </div>
+        <button id="refreshBtn" class="icon-btn" type="button" title="Actualizar"><i class="bi bi-arrow-clockwise"></i></button>
+        <div class="date-chip"><i class="bi bi-calendar3"></i><span id="dateText"></span></div>
+        <div class="user-chip"><i class="bi bi-person-circle"></i><span>Administrador</span></div>
+      </header>
+
+      <section id="viewRoot" class="view-root"></section>
+    </section>
+  </main>
+
+  <div class="modal fade" id="itemModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <form id="itemForm" class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Registrar herramienta</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body row g-3">
+          <div class="col-6">
+            <label class="form-label" for="itemCode">Codigo</label>
+            <input id="itemCode" class="form-control" required>
+          </div>
+          <div class="col-6">
+            <label class="form-label" for="itemCategory">Categoria</label>
+            <select id="itemCategory" class="form-select">
+              <option>Material de apoyo</option>
+              <option>Equipo tecnico</option>
+              <option>Equipo de medicion</option>
+            </select>
+          </div>
+          <div class="col-12">
+            <label class="form-label" for="itemName">Nombre</label>
+            <input id="itemName" class="form-control" required>
+          </div>
+          <div class="col-12">
+            <label class="form-label" for="itemLocation">Ubicacion</label>
+            <input id="itemLocation" class="form-control" value="Bodega tecnica" required>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cancelar</button>
+          <button class="btn btn-success" type="submit">Guardar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="modal fade" id="userModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <form id="userForm" class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Crear usuario</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body row g-3">
+          <div class="col-md-6">
+            <label class="form-label" for="userFirstName">Nombre</label>
+            <input id="userFirstName" class="form-control" required>
+          </div>
+          <div class="col-md-6">
+            <label class="form-label" for="userLastName">Apellido</label>
+            <input id="userLastName" class="form-control" required>
+          </div>
+          <div class="col-12">
+            <label class="form-label" for="userEmail">Correo electronico</label>
+            <input id="userEmail" class="form-control" type="email" required>
+          </div>
+          <div class="col-md-6">
+            <label class="form-label" for="userRole">Rol</label>
+            <select id="userRole" class="form-select">
+              <option value="EMPLEADO">EMPLEADO</option>
+              <option value="ADMINISTRADOR">ADMINISTRADOR</option>
+              <option value="IT">IT</option>
+            </select>
+          </div>
+          <div class="col-md-6">
+            <label class="form-label" for="userInstitution">Institucion</label>
+            <select id="userInstitution" class="form-select">
+              <option value="ITR">ITR</option>
+              <option value="CFP">CFP</option>
+            </select>
+          </div>
+          <div class="col-12">
+            <label class="form-label" for="userPassword">Contrasena</label>
+            <input id="userPassword" class="form-control" type="password" minlength="4" required>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cancelar</button>
+          <button class="btn btn-success" type="submit">Guardar usuario</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div id="toastHost" class="toast-container position-fixed top-0 end-0 p-3"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+  <script src="app.js"></script>
+</body>
+</html>
